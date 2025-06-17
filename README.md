@@ -18,3 +18,13 @@ I have also attempted to associate every loan application to a customer, hence c
 <img width="1165" alt="image" src="https://github.com/user-attachments/assets/71d9ab57-581e-4e2f-80a1-8bcc20231878" />
 
 
+Running the Application 
+
+1. Ensure you have port 8088 opened.
+2. Ensure you have at least Java 17+
+3. Ensure you have mvn installed , to run command -> mvn clean install once you have cloned this repo. Make sure that at least the pom.xml file is in the root directory where you will be running the same command.
+4. Once the application has finished building/installing, run command -> java -jar target/dbinitialization-0.0.1-SNAPSHOT.jar
+
+   <img width="1635" alt="image" src="https://github.com/user-attachments/assets/57fa92f7-13b1-4f75-9c49-f19346bf6dbe" />
+
+   
