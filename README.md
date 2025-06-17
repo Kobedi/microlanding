@@ -28,3 +28,8 @@ Running the Application
    <img width="1635" alt="image" src="https://github.com/user-attachments/assets/57fa92f7-13b1-4f75-9c49-f19346bf6dbe" />
 
    
+H2 Database
+
+Once the springboot application, H2 database will also be available on the web, and you should see the following UI display. 
+
+<img width="758" alt="image" src="https://github.com/user-attachments/assets/ca7fc025-c7e1-4ef5-875b-29c05ee721f5" />
