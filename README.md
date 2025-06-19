@@ -17,6 +17,22 @@ I have also attempted to associate every loan application to a customer, hence c
 
 <img width="1165" alt="image" src="https://github.com/user-attachments/assets/71d9ab57-581e-4e2f-80a1-8bcc20231878" />
 
+I have also put in a mechanism to settle loans, 
+
+
+<img width="1322" alt="image" src="https://github.com/user-attachments/assets/4edcacdb-efb2-4cd0-9d12-e02696e95431" />
+
+
+
+
+<img width="1344" alt="image" src="https://github.com/user-attachments/assets/e088eb60-f2d5-4491-8182-72bb0591b108" />
+
+
+
+
+<img width="1290" alt="image" src="https://github.com/user-attachments/assets/4a5d3514-ca55-47e2-b7bc-4b9037da3b25" />
+
+
 
 Running the Application 
 
