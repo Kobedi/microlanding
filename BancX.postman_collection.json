@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "af401c55-5736-4147-9f64-48994f7ec6dc",
+		"name": "BancX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34183562",
+		"_collection_link": "https://simfy-ayoba.postman.co/workspace/Ayoba-API~698225db-fc6e-4312-86ea-70e26631a286/collection/34183562-af401c55-5736-4147-9f64-48994f7ec6dc?action=share&source=collection_link&creator=34183562"
+	},
+	"item": [
+		{
+			"name": "createCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testAccount\",\n    \"lastName\" :\"Benzito\",\n    \"applicationDate\" : \"today\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLoanApplication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\" :\"\",\n    \"customerModel\": {\n        \"id\" : 1,\n        \"name\": \"James\",\n        \"lastName\" : \"Walale\",\n        \"applicationDate\": \"today\"\n    },\n    \"loanModel\" : {\n        \"Id\": 0,\n        \"loanId\": 0,\n        \"loanAmount\": 10000,\n        \"latestBalance\": 0.00,\n        \"loanStatus\": \"N/A\",\n        \"latestPaymentDate\": \"N/A\"\n    }\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listLoanApplication",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\" :\"\",\n    \"customerModel\": {\n        \"id\" : 1,\n        \"name\": \"James\",\n        \"lastName\" : \"Walale\",\n        \"applicationDate\": \"today\"\n    },\n    \"loanModel\" : {\n        \"Id\": 0,\n        \"loanId\": 0,\n        \"loanAmount\": 10000,\n        \"latestBalance\": 0.00,\n        \"loanStatus\": \"N/A\",\n        \"latestPaymentDate\": \"N/A\"\n    }\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLoanApplicationById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/loans/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"loans",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLoanPayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 0,\n    \"loanId\": 3,\n    \"customerId\": 1,\n    \"paymentAmount\": 600,\n    \"loanStatus\": \"active\",\n    \"lastUpdated\": \"2025-06-16T20:42:06+02:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

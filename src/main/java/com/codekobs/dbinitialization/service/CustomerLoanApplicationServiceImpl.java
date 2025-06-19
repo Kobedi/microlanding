@@ -5,6 +5,7 @@ import com.codekobs.dbinitialization.entity.CustomerLoanApplication;
 import com.codekobs.dbinitialization.model.CustomerLoanApplicationModel;
 import com.codekobs.dbinitialization.model.CustomerModel;
 import com.codekobs.dbinitialization.model.LoanModel;
+import com.codekobs.dbinitialization.payment.service.LoanPaymentHistoryServiceImpl;
 import com.codekobs.dbinitialization.repository.CustomerLoanApplicationRepository;
 import com.codekobs.dbinitialization.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class CustomerLoanApplicationServiceImpl implements CustomerLoanApplicati
 
     Date date = new Date();
     Timestamp ts = new Timestamp(date.getTime());
+
+    public enum LoanStatus
+    {
+        ACTIVE,SETTLED
+    }
 
     @Autowired
     private CustomerLoanApplicationRepository customerLoanApplicationRepository;
@@ -47,10 +53,12 @@ public class CustomerLoanApplicationServiceImpl implements CustomerLoanApplicati
             if(savedCustomer.getId() != 0)
             {
                 LoanModel loanModel = customerLoanApplicationModel.getLoanModel();
+                System.out.println("<<<<<<<<<<<< Load >>>>>>>>>>>>> "+ loanModel.toString());
                 CustomerLoanApplication customerLoanApplication = CustomerLoanApplication.builder()
                         .loanId(loanModel.getLoanId()).customerId(savedCustomer.getId()).
                         loanAmount(loanModel.getLoanAmount()).
-                        latestBalance(loanModel.getLatestBalance()).lastPaymentDate("N/A").build();
+                        latestBalance(loanModel.getLoanAmount()).loanStatus(LoanStatus.ACTIVE.toString()).
+                        lastPaymentDate("").build();
                 return customerLoanApplicationRepository.save(customerLoanApplication);
             }
         }

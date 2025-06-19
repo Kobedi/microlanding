@@ -12,6 +12,8 @@ public interface CustomerService {
     // Update operation
     Customer updateCustomer(Customer customer,
                                 Long customerId);
+
+    Customer findCustomerById(Long customerId);
     // Delete operation
     void deleteCustomerById(Long customerId);
 }

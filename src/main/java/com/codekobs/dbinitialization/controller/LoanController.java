@@ -6,9 +6,10 @@ import com.codekobs.dbinitialization.model.CustomerLoanApplicationModel;
 import com.codekobs.dbinitialization.service.CustomerLoanApplicationService;
 import com.codekobs.dbinitialization.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class LoanController {
@@ -31,4 +32,32 @@ public class LoanController {
         return customerLoanApplicationService.saveCustomerLoanApplication(
                 customerLoanApplicationModel);
     }
+
+    @GetMapping("/customers/{customerId}")
+    public Customer findCustomer(@PathVariable long customerId)
+    {
+        return customerService.findCustomerById(customerId);
+    }
+
+    @GetMapping("/customers")
+    public List<Customer> listCustomers()
+    {
+        return customerService.fetchCustomerList();
+    }
+
+    @GetMapping("/loans")
+    public List<CustomerLoanApplication> listCustomerLoanApplications()
+    {
+        return customerLoanApplicationService
+                .fetchCustomerLoanApplicationList();
+    }
+
+    @GetMapping("/loans/{loanId}")
+    public CustomerLoanApplication findCustomerLoanApplications(@PathVariable long loanId)
+    {
+         Optional<CustomerLoanApplication> foundLoan =  customerLoanApplicationService
+                .findCustomerLoanApplicationById(loanId);
+         return foundLoan.get();
+    }
+
 }

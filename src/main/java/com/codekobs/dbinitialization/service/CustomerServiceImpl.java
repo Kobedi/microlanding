@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+
 @Service
 public class CustomerServiceImpl implements CustomerService{
 
@@ -29,6 +31,12 @@ public class CustomerServiceImpl implements CustomerService{
                 = customerRepositoryRepository.findById(customerId)
                 .get();
         return customerRepositoryRepository.save(customerRecord);
+    }
+
+    @Override
+    public Customer findCustomerById(Long customerId) {
+         Optional<Customer> customer = customerRepositoryRepository.findById(customerId);
+         return customer.get();
     }
 
     @Override

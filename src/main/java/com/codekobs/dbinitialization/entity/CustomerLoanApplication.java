@@ -31,6 +31,9 @@ public class CustomerLoanApplication {
     @Column(name = "LATEST_BALANCE")
     private Double latestBalance;
 
+    @Column(name = "LOAN_STATUS")
+    private String loanStatus;
+
     @Column(name = "LAST_PAYMENT_DATE")
     private String lastPaymentDate;
 

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS customer (id bigint auto_increment,name varchar(100),
 
 --CREATE TABLE IF NOT EXISTS customer_loan_application (id bigint auto_increment,loan_id bigint,customer_id bigint, latest_balance decimal(15,2),last_payment_date varchar(255));
 
-CREATE TABLE IF NOT EXISTS customer_loan_application (id bigint auto_increment,loan_id bigint,customer_id bigint,loan_amount decimal(15,2),latest_balance decimal(15,2),last_payment_date varchar(255));
+CREATE TABLE IF NOT EXISTS customer_loan_application (id bigint auto_increment,loan_id bigint,customer_id bigint,loan_amount decimal(15,2),latest_balance decimal(15,2),loan_status varchar(255),last_payment_date varchar(255));
 
 CREATE TABLE IF NOT EXISTS customer_payments (id bigint auto_increment,loan_id bigint,customer_id bigint,payment_amount decimal(15,2), loan_status varchar(10), last_updated varchar(30));
 --For reporting
